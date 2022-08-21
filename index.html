@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courgette&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./index.css" />
+    <script
+      src="https://kit.fontawesome.com/5307dcf8d5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Modal Project</title>
+  </head>
+  <body>
+    <!-- nav-bar start -->
+    <nav class="nav-bar">
+      <div class="nav-center">
+        <div class="nav-header">
+          <a href="./index.html"
+            ><img src="./img/logo.svg" alt="Grandma's snacks"
+          /></a>
+          <button class="toggle-btn">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <span class="toggle-btn_bar"></span>
+            <span class="toggle-btn_bar"></span>
+            <span class="toggle-btn_bar"></span>
+          </button>
+        </div>
+        <div class="nav-container">
+        <div class="nav-links">
+          <div class="nav-link"><a href="./index.html">Home</a></div>
+          <div class="nav-link"><a href="#about">About</a></div>
+          <div class="nav-link"><a href="#store">Store</a></div>
+        </div>
+        </div>
+        <div class="nav-end">
+        <div class="phone-contact">
+          <span><i class="fa-solid fa-phone-flip"></i></span>
+          <span>+123456789</span>
+        </div>
+        <div class="cart-items">
+            <a href="#"><span><i class="fa-solid fa-cart-shopping"></i></i></span>
+          <span>2 Items - $10.49</span></a>
+        </div>
+        </div>
+      </div>
+    </nav>
+    <!-- nav-bar end -->
+    <main>
+        <section class="section-center">
+          <!-- Home page start -->
+        <section class="homepage-background">
+          <div class="background-cover">
+            <div class="text-container">
+              <div>
+                <h1>
+                  <span class="white">welcome to</span>
+                  <span class="pink">Grandma's</span>
+                </h1>
+                <div class="explore-btn"><a href="#">Explore</a></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Home page end -->
+        <!-- About page start -->
+        <section class="about-page" id="about">
+            <div class="about-details">
+                <div class="about-header">
+                    <span class="about-header_black">about </span>
+                    <span class="about-header_pink">us</span>
+                </div>
+                <div class="about-text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius laudantium tempore, autem officia ad eligendi laborum fugiat, ea aliquid eos est quisquam, id nulla non? Corrupti officia delectus nihil quo?</p>
+                </div>
+                <div class="explore-btn about-btn"><a href="#">Explore</a></div>
+            </div>
+            <div class="about-img_container">
+              <div class="about-img"></div>
+            </div>
+            
+        </section>
+        <!-- About page end -->
+        <!-- store page start -->
+        <section class="store-page" id="store">
+          <div class="store-center">
+            <div class="store-header"><h1>
+              <span class="store-header_black">our </span>
+            <span class="store-header_pink">store</span>
+          </h1>
+          </div>
+          <div class="items-category">
+            <div class="all"><button type="button">all</button></a></div>
+            <div class="cakes"><button type="button" >cakes</button></a></div>
+            <div class="cupcakes"><button type="button" >cupcakes</button></a></div>
+            <div class="sweets"><button type="button" >sweets</button></a></div>
+            <div class="doughnuts"><button type="button" >doughnuts</button></a></div>
+          </div>
+          <div class="search-item">
+            <form action="">
+              <span><i class="fa-solid fa-magnifying-glass search-icon"></i> <input type="text" placeholder="items...."></span>
+            </form>
+          </div>
+          
+          <div class="store-items">
+            <!-- <article class="single-item">
+              <div class="item-photos">
+              
+              <span><a href=""><img src="./img/sweets-1.jpeg" alt="Sweet Item" class="item-photo"></a><a href="#"><i class="fa-solid fa-cart-shopping shopping-cart"></i></i></a></span>
+              </div>
+              <div class="header-info">
+                <h4 class="item-name">Sweet Item</h4>
+                <h4 class="item-price">$5</h4>
+              </div>
+            </article> -->
+          </div>
+          </div>
+        </section>
+        <!-- store page end -->
+        <div class="modal-overlay">
+          <div class="modal-container">
+            <span class="close-btn"><i class="fa-solid fa-xmark"></i></i></span>
+            <div class="modal-img"><img src="./img/cake-1.jpeg" alt="" class="preview-img"></div>
+            <span class="left-btn"><i class="fa-solid fa-caret-left"></i></span>
+            <span class="right-btn"><i class="fa-solid fa-caret-right"></i></span>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
