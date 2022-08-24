@@ -75,7 +75,7 @@ let items = [
 let toggleBtn = document.querySelector(`.toggle-btn`);
 let navLinks = document.querySelector(`.nav-links`);
 let navContainer = document.querySelector(`.nav-container`);
-toggleBtn.addEventListener(`click`, function () {
+toggleBtn.addEventListener(`click`, () => {
   let containerHeight = navContainer.getBoundingClientRect().height;
   let linksHeight = navLinks.getBoundingClientRect().height;
   console.log(linksHeight);
@@ -87,11 +87,11 @@ toggleBtn.addEventListener(`click`, function () {
 });
 
 let storeItems = document.querySelector(`.store-items`);
-window.addEventListener(`DOMContentLoaded`, function () {
+window.addEventListener(`DOMContentLoaded`, () => {
   showItem(items);
 });
 
-function showItem(junksItems) {
+let showItem = (junksItems) => {
   let displayView = junksItems.map(function (item) {
     return `<article class="single-item">
               <div class="item-photos">
@@ -106,9 +106,9 @@ function showItem(junksItems) {
   });
   let displayViews = displayView.join(``);
   storeItems.innerHTML = displayViews;
-}
+};
 
-setTimeout(function () {
+setTimeout(() => {
   let itemPhoto = document.querySelectorAll(`.item-photo`);
   let itemPhotos = document.querySelectorAll(`.item-photos`);
   let modalOverlay = document.querySelector(`.modal-overlay`);
@@ -121,24 +121,24 @@ setTimeout(function () {
   let imgs = items.map(function (item) {
     return item.img;
   });
-  function showItems(eachImg) {
+  let showItems = (eachImg) => {
     previewImg.src = imgs[eachImg];
-  }
-  itemPhotos.forEach(function (item) {
-    item.addEventListener(`mouseenter`, function () {
+  };
+  itemPhotos.forEach((item) => {
+    item.addEventListener(`mouseenter`, () => {
       let photos = item.children[0].children[0].children[0];
       photos.classList.add(`photo-active`);
       let cart = item.children[0].children[1].children[0];
       cart.classList.add(`cart-active`);
     });
-    item.addEventListener(`mouseleave`, function () {
+    item.addEventListener(`mouseleave`, () => {
       let photos = item.children[0].children[0].children[0];
       photos.classList.remove(`photo-active`);
       let cart = item.children[0].children[1].children[0];
       cart.classList.remove(`cart-active`);
     });
   });
-  itemPhoto.forEach(function (photo) {
+  itemPhoto.forEach((photo) => {
     photo.addEventListener(`click`, function (e) {
       e.preventDefault();
       modalOverlay.style.visibility = `visible`;
@@ -148,14 +148,14 @@ setTimeout(function () {
       console.log(imgs.indexOf(imgSrc));
       let currentItem = imgs.indexOf(imgSrc);
 
-      rightBtn.addEventListener(`click`, function () {
+      rightBtn.addEventListener(`click`, () => {
         currentItem++;
         if (currentItem > imgs.length - 1) {
           currentItem = 0;
         }
         showItems(currentItem);
       });
-      leftBtn.addEventListener(`click`, function () {
+      leftBtn.addEventListener(`click`, () => {
         currentItem--;
         if (currentItem < 0) {
           currentItem = imgs.length - 1;
@@ -163,18 +163,18 @@ setTimeout(function () {
         showItems(currentItem);
       });
 
-      closeBtn.addEventListener(`click`, function () {
+      closeBtn.addEventListener(`click`, () => {
         modalOverlay.style.visibility = `hidden`;
       });
     });
   });
-  shoppingCart.forEach(function (carts) {
-    carts.addEventListener(`click`, function (e) {
+  shoppingCart.forEach((carts) => {
+    carts.addEventListener(`click`, (e) => {
       e.preventDefault();
       modalOverlay.style.visibility = `visible`;
       previewImg.style.display = `none`;
       let currentItem = 0;
-      rightBtn.addEventListener(`click`, function () {
+      rightBtn.addEventListener(`click`, () => {
         previewImg.style.display = `block`;
         if (currentItem > imgs.length - 1) {
           currentItem = 0;
@@ -182,7 +182,7 @@ setTimeout(function () {
         showItems(currentItem);
         currentItem++;
       });
-      leftBtn.addEventListener(`click`, function () {
+      leftBtn.addEventListener(`click`, () => {
         previewImg.style.display = `block`;
         currentItem--;
         if (currentItem < 0) {
@@ -192,7 +192,7 @@ setTimeout(function () {
       });
     });
   });
-  closeBtn.addEventListener(`click`, function () {
+  closeBtn.addEventListener(`click`, () => {
     modalOverlay.style.visibility = `hidden`;
   });
 }, 100);
