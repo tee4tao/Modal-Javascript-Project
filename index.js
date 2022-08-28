@@ -118,12 +118,11 @@ setTimeout(() => {
   let rightBtn = document.querySelector(`.right-btn`);
   let leftBtn = document.querySelector(`.left-btn`);
   let shoppingCart = document.querySelectorAll(`.shopping-cart`);
-  let imgs = items.map(function (item) {
-    return item.img;
-  });
-  let showItems = (eachImg) => {
-    previewImg.src = imgs[eachImg];
-  };
+  /*
+  ==============
+  cart & photo hover
+  ==============
+  */
   itemPhotos.forEach((item) => {
     item.addEventListener(`mouseenter`, () => {
       let photos = item.children[0].children[0].children[0];
@@ -138,6 +137,24 @@ setTimeout(() => {
       cart.classList.remove(`cart-active`);
     });
   });
+  /*
+  ==============
+   end of cart & photo hover
+  ==============
+  */
+
+  /*
+  ==============
+  modalOverlay display picture
+  ==============
+  */
+  let imgs = items.map(function (item) {
+    return item.img;
+  });
+  let showItems = (eachImg) => {
+    previewImg.src = imgs[eachImg];
+  };
+
   itemPhoto.forEach((photo) => {
     photo.addEventListener(`click`, function (e) {
       e.preventDefault();
